@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     height: constraints.maxHeight * 0.10,
                     child: const Text("Calculation Result"),
-                  )
+                  ),
                 ],
               ),
             );
