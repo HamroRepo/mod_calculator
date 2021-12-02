@@ -3,30 +3,18 @@ import '../widgets/my_button.dart';
 
 class HomeScreen extends StatelessWidget {
   final List buttons = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "U",
-    "V",
-    "W",
-    "X"
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    'C',
+    '0',
+    '=',
   ];
 
   HomeScreen({Key? key}) : super(key: key);
@@ -62,9 +50,9 @@ class HomeScreen extends StatelessWidget {
                             "Calculation Part",
                           ),
                         ),
-                        const SizedBox(
-                          height: 0.05,
-                        ),
+                        // const SizedBox(
+                        //   height: 0.05,
+                        // ),
                         Container(
                           alignment: Alignment.centerRight,
                           height: constraints.maxHeight * 0.10,
@@ -82,9 +70,31 @@ class HomeScreen extends StatelessWidget {
                           itemCount: buttons.length,
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 4),
+                                  crossAxisCount: 3),
                           itemBuilder: (context, int index) {
-                            return MyButton(buttons[index]);
+                            return Padding(
+                              padding: const EdgeInsets.all(3.0),
+                              child: GestureDetector(
+                                onTap: () {
+                                  // functions based on buttons index
+                                  if (index == 9) {
+                                    // clear
+                                  }
+                                  if (index == 11) {
+                                    //  equal
+                                  } else {
+                                    //  write text
+                                  }
+                                },
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                    color: Colors.grey,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Center(child: Text(buttons[index])),
+                                ),
+                              ),
+                            );
                           }),
                     ),
                   )
